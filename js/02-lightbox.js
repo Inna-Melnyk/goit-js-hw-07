@@ -17,18 +17,13 @@ const markup = galleryItems
 
 galleryListEl.insertAdjacentHTML("beforeend", markup);
 
-galleryListEl.addEventListener("click", onClick);
-
-function onClick(evt) {
-  evt.preventDefault();
-
-  if (!evt.target.classList.contains("gallery__image")) {
-    return;
-  }
-
-let gallery = new SimpleLightbox(".gallery a", {
+const gallery = new SimpleLightbox(".gallery a", {
+  captions: true,
   captionDelay: 250,
   captionsData: "alt",
 });
 
-}
+
+
+
+// gallery.on("error", (e) => console.log(e));
